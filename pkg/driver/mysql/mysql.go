@@ -129,7 +129,7 @@ func (drv *Driver) DropDatabase() error {
 func (drv *Driver) mysqldumpArgs() []string {
 	// generate CLI arguments
 	args := []string{"--opt", "--routines", "--no-data",
-		"--skip-dump-date", "--skip-add-drop-table"}
+		"--skip-dump-date", "--skip-add-drop-table", "--skip-auto-increment"}
 
 	if hostname := drv.databaseURL.Hostname(); hostname != "" {
 		args = append(args, "--host="+hostname)
